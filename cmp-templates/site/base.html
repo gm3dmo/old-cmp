@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<LINK REL="stylesheet" HREF="http://www.corpsofmilitarypolice.org/media/style.css">
+<meta name="google-site-verification" content="czkk72SxiR1cshIuJhHCpHBruBxks3n-qYhm5YCMB14" />
+
+{% if s_cemetery_latitude %} 
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<!--
+<script>
+function initMap() {alert("OK");}
+    "Name: <b>{{ s_surname }}, {{ s_initials }}</b>" +
+    "Rank: <b> {{ s_rank }}</b>,   Army Number: <b>{{ s_armynumber }}</b>" +
+    "Date Died: <b> {{ s_date_killed }}</b>" + 
+    "Country: <b> {{ s_cemetery_country }} </b>" +
+    title: "{{ s_cemetery }}",
+  });
+-->
+
+<script>
+function initMap() {
+  const cemetery  = { lat: {{ s_cemetery_latitude }}, lng: {{ s_cemetery_longitude }} };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: cemetery,
+  });
+  const contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h3 id="firstHeading" class="firstHeading">{{ s_cemetery }}</h3>' +
+    '<div id="bodyContent">' +
+    "<p>Name: <b>{{ s_surname }} {{ s_initials }}</b>" +
+    "<p>Rank: <b>{{ s_rank}} {{ s_armynumber }}</b>" +
+    "<p>Date died: <b>{{ s_date_killed}}</b>" +
+    "<p>Country: <b>{{ s_cemetery_country }}</b>" +
+    "</div>" +
+    "</div>";
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+  });
+  const marker = new google.maps.Marker({
+    position: cemetery,
+    map,
+    title: "Uluru (Ayers Rock)",
+  });
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
+}
+</script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key={{ s_maps_api_key }}&callback=initMap" async defer></script>
+
+      <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+
+{% load googleanalytics_tags %}
+
+</head>
+<body bgcolor="#ffffff">
+
+{% else %}
+
+{% load googleanalytics_tags %}
+
+</head>
+<body bgcolor="#ffffff">
+
+{% endif %}
+
+ <div id="list1">
+ </div>
+ <div id="main">
+  {% block content %}
+  {% endblock %}
+ </div>
+ <div id="list2">
+ </div>
+{% googleanalytics %}
+</body>
+</html>

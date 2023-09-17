@@ -1,0 +1,34 @@
+{% extends "site/base.html" %}
+{% load pagination_tags %}
+
+  <h1>{% block head %} {{ page_title }} {% endblock %} </h1>
+    
+  {% block content %}
+  <center>
+  <h1>Corps of Military Police </h1>
+  <img src="http://www.corpsofmilitarypolice.org/media/cmp-masthead-sm.png" alt="Badges of the RMP/CMP on the blue and red striped colours of the Corps">
+   <h3>Casualties, Honours & Decorations, POW's:</h3>
+</center>
+  
+  
+  <center>
+  <form id="search-form" method="get" action=".">
+   {{ form.as_p }} <input type="submit" value="Search" id="search-button"/>
+  </form>
+  <div id="search-results" class="longlist">
+  </center>
+   {% if show_results %}
+     <center>
+     <small> {{ hits }} Results for: "{{ search_string }}" </small>
+     <!-- Hits Found: {{ hits }}  for {{ search_string }}-->
+     </center>
+
+     {% autopaginate soldiers 15 %}
+     {% include "site/soldier_list.html" %}
+     {% include "site/key.html" %}
+     <hr>
+     <center>
+     {% paginate %}
+    
+   {% endif %}
+  {% endblock %}

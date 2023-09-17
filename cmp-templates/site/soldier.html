@@ -1,0 +1,99 @@
+{% extends "site/base.html"  %}
+
+  <h1>{% block head %} {{ page_title }} {% endblock %} </h1>
+  {% block content %}
+  <p> 
+                    <!-- TITLE -->
+  <center>
+    <h3> {{ s_corps }} </h3>  
+   <img src="http://www.corpsofmilitarypolice.org/media/cap_badges/{{ s_badge }}" alt="{{ s_badge_alt }}">
+  </center>
+  
+  <h5>Soldier Details:<h5>
+  <table class="stdTable">
+   <tr><td><em>Surname: </em></td><td>     {{ s_surname }}  <td></tr>
+   <tr><td><em>Initials: &nbsp</em></td><td>  {{ s_initials }}   </td></tr>
+   <tr><td><em>Rank: &nbsp</em></td><td>        {{ s_rank  }}      </td></tr>
+   <tr><td><em>Army No.:&nbsp</em></td><td> {{ s_armynumber }} </td></tr>
+   <tr><td><em>Notes: &nbsp</em></td><td>       {{ s_notes }}      </td></tr>
+  </table>
+  </center>
+  <p>
+
+   {% if s_is_decorated %}
+     <h5>Decorations/Medals/Awards ({{ s_dec_count }})  </h5>
+     
+     {% for decoration in s_decoration_list %}
+     <table class="stdTable">
+       <tr>
+           <td><a href="{{ decoration.GztURL }} "><img src="http://www.corpsofmilitarypolice.org/media/gazette.png"></a>&nbsp</td>
+           <td><em>{{ forloop.counter }}. Decoration:</em><b> &nbsp <a href="{{ decoration.Decoration.details_link }}"> {{ decoration }}</a> </b></td>
+           {% if decoration.Decoration.Abbr %}
+            <td><img src="/media/medals/{{ decoration.Decoration.Abbr }}_ribbon.png"> </td> 
+           {% endif %}    
+           <td><em>Gazette Date:</em> {{ decoration.GztDate }}</td> 
+           <td><em>Gazette Issue:</em> {{ decoration.GztIssue }}</td> 
+           <td><em>Gazette Page:</em> {{ decoration.GztPage }}</td> 
+           {% if decoration.Theatre %}
+            <td><em>Theatre: </em> {{ decoration.Theatre }}</td> 
+           {% endif %}    
+
+       </tr>
+     
+       {% if decoration.Citation %}
+        <table class="stdTable">
+        <tr><td><em>Citation:</em> &nbsp {{ decoration.Citation }}</td></tr>
+        </table>
+       {% endif %}    
+      {% endfor %}    
+    </table>
+   {% endif %}    
+
+   {% if s_is_pow %}
+    <h5>POW Details:</h5>
+    <table class="stdTable">
+     <tr><td><em>Camp:</em></td><td>       {{ s_powcamp }} &nbsp <img src="http://www.corpsofmilitarypolice.org/media/flag-icons/png/{{ s_powcamp_flag }}.png"> &nbsp {{ s_powcamp_country }}   </td></tr>
+     
+     <tr><td><em>Notes:</em></td><td>      {{ s_pownotes }}   </td></tr>
+   {% endif %}    
+     <tr><td></td><td>  </td></tr>
+    </table>
+
+   {% if s_is_casualty %}
+    <h5>Casualty Details:</h5>
+    <table class="stdTable">
+    <div id="casualty">
+    <tr><td><em>Date Killed:</em></td><td>      {{ s_date_killed|date:"jS F Y" }} </td></tr>
+    <tr><td><em>Company:</em></td><td>   {{ s_death_company }}     </td></tr>
+    
+    <tr><td><em>Cemetery:</em></td><td> <a href="/cemetery/{{ s_cemetery.id }}">{{ s_cemetery }}</a> &nbsp 
+            <a href="/country/{{ s_cemetery_flag }}"> <img src="http://www.corpsofmilitarypolice.org/media/flag-icons/png/{{ s_cemetery_flag }}.png"></a> 
+            {{ s_cemetery_country }}    
+     </td></tr>
+    <tr><td><em>CWGC Search:</em></td><td>
+            <a href="{{ s_cwgc_search }}"> 
+            <img src="http://www.corpsofmilitarypolice.org/media/status-icons/cwgc.gif"> </a>
+     </td></tr>
+
+  </table>
+     {% if s_grave_photo %}
+       <center>
+       <h5>Grave Photograph</h5>
+       <img src="http://www.corpsofmilitarypolice.org/media/grave_images/{{ s_grave_photo }}">
+       </center>
+     {% else %}
+       <center>
+       <h5>Grave Photograph:</h5>
+       <small>Grave photograph needed. If you have a picture of the headstone and are happy for us to use it please e-mail it to <a href="mailto:admin@corpsofmilitarypolice.org">admin@corpsofmilitarypolice.org </a></small>
+       </center>
+     {% endif %}    
+
+     {% if s_cemetery_latitude %}
+      <center>
+      <h5>Map</h5>  
+      <div id="map" style="width: 600px; height: 400px"></div>
+      <center>
+     {% endif %}    
+    {% endif %}    
+  <p> {{ page_body }} </p>
+  {% endblock %}

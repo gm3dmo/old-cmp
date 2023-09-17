@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<LINK REL="stylesheet" HREF="http://www.corpsofmilitarypolice.org/media/style.css">
+<meta name="google-site-verification" content="czkk72SxiR1cshIuJhHCpHBruBxks3n-qYhm5YCMB14" />
+
+{% load googleanalytics_tags %}
+
+{% if s_cemetery_latitude %} 
+
+       <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key={{ s_maps_api_key }}" type="text/javascript"></script>
+       <script type="text/javascript">
+            //<![CDATA[ 
+            function createMarker(point,html) {
+                var marker = new GMarker(point);
+                GEvent.addListener(marker, "click", function() {
+                marker.openInfoWindowHtml(html);
+                });
+            return marker;
+            }
+
+            function load() {
+            if (GBrowserIsCompatible()) {
+                var map = new GMap2(document.getElementById("map"));
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                map.setCenter(new GLatLng({{ s_cemetery_latitude }}, {{ s_cemetery_longitude }} ), {{ s_maps_zoom }});
+                var point = new GLatLng({{ s_cemetery_latitude }}, {{ s_cemetery_longitude }});
+                var marker = createMarker(point,'<div style="width:240px"> \
+                  Cemetery:    <b>{{ s_cemetery }}          </b><br> \
+                  Name:        <b>{{ s_surname }}, {{ s_initials }}</b><br> \
+                  Rank:        <b> {{ s_rank }}              </b><br>Army Number: <b>{{ s_armynumber }} </b> \
+                  Date Died: <b> {{ s_date_killed }}      </b><br> \
+                  Country:     <b> {{ s_cemetery_country }} </b><br> \
+                  </div>')
+                  map.addOverlay(marker);
+            }
+           }
+           //]]>
+          </script>
+</head>
+<body onload="load()" onunload="GUnload()" bgcolor="#ffffff">
+
+{% else %}
+
+ </head>
+ <body bgcolor="#ffffff">
+
+{% endif %}
+
+ <div id="list1">
+ </div>
+ <div id="main">
+  {% block content %}
+  {% endblock %}
+ </div>
+ <div id="list2">
+ </div>
+{% googleanalytics %}
+</body>
+</html>

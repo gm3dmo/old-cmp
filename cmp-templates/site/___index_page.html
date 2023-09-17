@@ -1,0 +1,48 @@
+{% extends "site/base.html"  %}
+
+  <h1>{% block head %} {{ page_title }} {% endblock %} </h1>
+  {% block content %}
+  <center>
+  <h1>Corps of Military Police </h1>
+  <img src="http://www.corpsofmilitarypolice.org/media/cmp-masthead-sm.png" alt="Badges of the RMP/CMP on the blue and red striped colours of the Corps">
+   <h3>Casualties, Honours & Decorations, POW's:</h3>
+
+  <div id="search">
+  <center>
+  <form id="search-form" method="get" action="search">
+   {{ form.as_p }} <input type="submit" value="Search" id="search-button" />
+  </form>
+  </center>
+  </div>
+
+  <p> 
+      Or <a href="/browse">browse</a> a database of information covering {{ cmp_soldier_count }} soldiers of the Corps of Military Police, Corps of Military Police (India) and Royal Military Police. There are records of; {{ cmp_casualty_count }} casualties buried in {{ cmp_cemetery_count }} cemeteries across {{ cmp_countries_count }} countries, {{ cmp_decoration_count  }} decorations/medals and {{ cmp_prisoner_count }} Prisoners of War. Casualties can be browsed by <a href="/country">country</a> or <a href="/cemetery">cemetery</a>.
+ <p>
+      View cemeteries and casualties in GoogleEarth <img src="http://www.corpsofmilitarypolice.org/media/icon_earth.gif" alt="The googleearth marble logo" height="16" width=16">&nbsp<a href="http://www.corpsofmilitarypolice.org/media/cmp-cemeteries.kmz">cmp-cemeteries.kmz</a>
+ <p>
+      Casualties have a link to the Commonwealth War Graves Commision (CWGC) Web Site by clicking on the small spectacles icon: <img src="http://www.corpsofmilitarypolice.org/media/status-icons/cwgc.gif" alt="Spectacles icon indicating CWGC link">
+  <p> 
+      Where known, decorations have a link to the London Gazette. Click on the small newspaper icon to follow a link to the London Gazette website: <img src="http://www.corpsofmilitarypolice.org/media/gazette.png" alt="icon indicating link to the London gazette"> 
+<p>
+<a href="/media/wardiaries.html">Provost Company War Diary Extracts</a>
+<p>
+<p>
+<a href="/media/acknowledgements.html">Acknowledgements Page</a>
+<p>
+Contact us at:
+<a href="mailto:admin@corpsofmilitarypolice.org">admin@corpsofmilitarypolice.org</a>
+<p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3489563963590154";
+/* 468x60, created 16/06/10 */
+google_ad_slot = "6901782302";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+{{ page_body }} </p>
+  {% endblock %}

@@ -1,0 +1,14 @@
+     {% if cemeteries %}
+     <center>
+      <table class="stdTable">
+      {% for cemetery in cemeteries %}
+       <tr class="StdTr">
+        <td><a href=http://www.corpsofmilitarypolice.org/cemetery/{{ cemetery.id }}> {{ cemetery.Name }}</a>&nbsp</td>
+        <td><img src="http://www.corpsofmilitarypolice.org/media/flag-icons/png/{{ cemetery.country_flag }}.png"></td>
+        <td>{{ cemetery.Country }} &nbsp</td>
+       </tr>
+      {% endfor%}
+     </table>
+     {% endif %}
+     <center>
+  </div>

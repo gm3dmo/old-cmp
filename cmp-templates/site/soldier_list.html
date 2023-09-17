@@ -1,0 +1,48 @@
+     {% if soldiers %}
+     <center>
+          <!-- Hits Found: {{ hits }}  for {{ search_string }}-->
+ 
+      <table class="stdTable">
+      {% for soldier in soldiers %}
+       <tr class="StdTr">
+        <td><a href=http://www.corpsofmilitarypolice.org/soldier/{{ soldier.id }}>{{soldier.id }}</a</td><td class="main">{{ soldier.Surname|title }} &nbsp</td>
+        <td>{{ soldier.dot_initials}} &nbsp</td>
+        <td>{{ soldier.Rank }} &nbsp</td><td>{{ soldier.Army_number }} &nbsp</td>
+
+        {% if soldier.soldierdecoration_set.count %}
+          <td ><img src="http://www.corpsofmilitarypolice.org/media/status-icons/d.png" alt="Icon indicating soldier was decorated"></td>
+        {% else %}
+          <td class="main">&nbsp</td>
+        {% endif %}
+
+        {% if soldier.soldierimprisonment %}
+          <td class="main"><img src="http://www.corpsofmilitarypolice.org/media/status-icons/p.png" alt="Icon indicating soldier was POW"></td>
+        {% else %}
+          <td class="main">&nbsp</td>
+        {% endif %}
+
+        {% if soldier.soldierdeath %}
+          <td><img src="http://www.corpsofmilitarypolice.org//media/status-icons/k.png" alt="Icon indicating soldier was killed"></td>
+          <td> {{ soldier.soldierdeath.Date }}</td>
+          <td> {{ soldier.soldierdeath.cemetery }}</td>
+          <td> {{ soldier.soldierdeath.cemetery.Country }}</td>
+          {% if soldier.soldierdeath.grave_photo %}
+             <td><img src="http://www.corpsofmilitarypolice.org/media/status-icons/photo.png" alt="Icon indicating grave photo held."></td>
+          {% else %}
+             <td>&nbsp</td>
+          {% endif %}
+        {% else %}
+          <td>&nbsp</td>
+          <td>&nbsp</td>
+          <td>&nbsp</td>
+          <td>&nbsp</td>
+          <td>&nbsp</td>
+        {% endif %}
+
+       </tr>
+      {% endfor%}
+     
+     </table>
+     {% endif %}
+     <center>
+  </div>

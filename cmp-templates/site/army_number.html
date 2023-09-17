@@ -1,0 +1,48 @@
+{% extends "site/base.html"  %}
+
+  <h1>{% block head %} {{ page_title }} {% endblock %} </h1>
+  {% block content %}
+  <center>
+  <h1>Army Number Search Tool</h1>
+  <img src="http://www.corpsofmilitarypolice.org/media/cmp-masthead-sm.png" alt="Badges of the RMP/CMP on the blue and red striped colours of the Corps">
+  </center>
+
+<p>This search tool can match army numbers from the 1920's to the end of World War 2 which was based on the regiment that a soldier joined initially,  and the post war numbering system which is army wide.  Pre 1920's, soldiers had regimental numbers so this site cannot be used for matching those.
+<p>
+Enter an army number to find out what unit/regiment block  the number was assigned from (upto WW2) or approximately when the soldier joined the army (post WW2).
+
+  <div id="search">
+  <center>
+  <form id="anform" method="get" action="armynumber"
+   {{ form.as_p }} <input type="submit" value="Search" />
+  </form>
+  </center>
+  </div>
+  <p> 
+
+<p>
+ <div id="search-results" class="longlist">
+  </center>
+     <center>
+      {% if army_number %}
+
+     The army number: <strong>{{ army_number }}</strong> indicates that the soldier's  original unit or date joined  was:  
+     <p><h2> "{{ original_unit }}"</h2>. 
+     </center>
+
+<p>
+    {% endif %}
+
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- armynumber -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-3489563963590154"
+     data-ad-slot="5499494190"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+{{ page_body }} </p>
+  {% endblock %}

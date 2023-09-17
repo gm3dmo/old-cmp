@@ -1,0 +1,13 @@
+     {% if countries %}
+     <center>
+      <table class="stdTable">
+      {% for country in countries %}
+       <tr class="StdTr">
+        <td><a href=http://www.corpsofmilitarypolice.org/country/{{ country.Alpha2|lower }}> {{ country.Name }}</a>&nbsp</td>
+        <td><img src="http://www.corpsofmilitarypolice.org/media/flag-icons/png/{{ country.Alpha2|lower }}.png"></td>
+       </tr>
+      {% endfor%}
+     </table>
+     {% endif %}
+     <center>
+  </div>
