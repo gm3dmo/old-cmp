@@ -1,0 +1,110 @@
+id,name,abbr,class
+1,Sergeant,Sgt,NC
+2,Private,Pte.,OR
+3,Corporal,Cpl,NC
+4,Lance Corporal,LCpl,NC
+5,Staff Sergeant,SSgt,NC
+6,Sergeant Major,,NC
+7,Sgt Acting WOII,,
+8,CQMS Acting WOII,,
+9,Acting WOI (RSM),,NC
+10,Warrant Officer III,,
+11,Warrant Officer    I,,
+12,Warrant Officer  II,,
+13,Company Quartermaster,,NC
+14,Pte A/LCpl,,
+15,Pte A/Cpl,,
+16,Havildar,,
+17,Corporal A/Sgt,,NC
+18,Sgt Acting WOI,,
+19,Lance Naik,LNaik,OR
+20,L/Cpl A/Cpl,,
+21,Pte A/SQMS,,
+22,Lance Sergeant,LSgt,NC
+23,Naik,,
+24,Subadar,,
+25,Warrant Officer I,,
+26,Acting WOII,,NC
+27,Jemadar,,
+28,Major,Maj,OF
+29,Squadron Sergeant Major,Sqn Sgt Maj,NC
+30,Sqn QM Sgt,,
+31,Company Sergeant Major,Coy Sgt Maj,NC
+32,Acting Sergeant,Act. Sgt.,NC
+33,A/ Sqn Sgt Major,,NC
+34,C/Sgt A/CSM,,NC
+35,Sgt/A/CSgt,,
+36,Sgt A/CSM,,
+37,Pte A/Sgt,,
+38,Cpl A/SSM,,
+39,Cpl A/ C/Sgt,,
+40,L/Cpl A/SSM,,
+41,L/Cpl A/ C/Sgt,,
+42,Cpl A/SQMS,,
+44,L/Cpl A/SQMS,,
+45,Cpl A/CSM,,
+46,Pte A/SSM,,
+47,Pte A/CSM,,
+49,Sgt A/SSM,,
+50,CQMS A/GSM,,
+51,Captain,Capt,OF
+52,Lieutenant,Lt,OF
+53,Lieutenant Colonel,Lt Col,OF
+55,Brigadier,Brig,OF
+56,Major (QM),Maj (QM),OF
+57,Lieutenant (QM),Lt (QM),OF
+58,Captain (QM),Capt (QM),OF
+59,Colonel,Col,OF
+60,Lieut Col (QM),,
+61,2nd Lieutenant,2 Lt,OF
+62,Major General,Maj Gen,OF
+63,Reverend,,
+64,Colour Sergeant,CSgt,NC
+65,Quarter Master Sgt,,
+66,Gunner,,
+67,Marine,,
+68,Cook,Cook,OR
+69,CQMS,,
+70,Driver,Dvr,OR
+71,Fusilier,,
+72,Lance Bombadier,LBdr,NC
+73,Rifleman,,
+74,Sepoy,,
+75,Sweeper,,
+76,Washerman,,
+77,WOII (CSM),,
+78,WOI (RSM),,
+79,Unknown,,
+80,Bombadier,Bdr,OR
+81,Junior Leader,Jnr Ldr,
+82,Troop Sergeant Major,,
+83,Guardsman,Gdsm,
+84,Sapper,Spr,
+85,Squadron Quartermaster Sergeant,SQMS,
+86,Acting Corporal,A/Cpl.,NC
+87,Craftsman,CFN,
+88,Squadron Corporal Major,SCM,NC
+89,Mister,Mr.,
+90,RQMS,,NC
+91,First Lieutenant,,
+92,Master Sergeant,,
+93,Acting Staff Sergeant,A/S/Sgt,
+94,Acting Quarter Master Sergeant,A/QMS,
+95,A/Staff Sergeant,A/S/Sgt,
+96,Acting Colour Sergeant,A/C/Sgt,
+97,Garrison Sergeant Major,GSM,OR
+98,Subaltern,Sub.,OF
+99,Staff Lieutenant,Staff/Lt,
+100,Farrier Sergeant,,
+101,Shoeing Smith Corporal,,
+102,Junior Commander,Jnr Cmdr,OF
+103,Senior Commander,Snr Cmdr,OF
+104,Interpreter,,
+105,Lieutenant General,Lt/Gen,OF
+106,General,,OF
+107,Lt (QGO),,
+108,Nurse,,
+109,Officer Cadet,,
+110,Trooper,Tpr.,
+111,T/S/Sgt,T/S/Sgt,
+112,"A/L/Cpl,",,
