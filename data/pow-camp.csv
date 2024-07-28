@@ -30,7 +30,9 @@ id,Name,NearestCity,Notes,WartimeCountry,PresentCountry_id,Latitude,Longitude
 29,BAU ARBEIT BATTALIONS 21 & 22,Lampsdord,SOUTH WEST OF BRESLAU,GERMANY,276,,
 30,Dulag Luft,Wetzlar,North west of Frankfurt,GERMANY,276,,
 31,Oflag V A,Weinsberg,North east of Karlsruhe,GERMANY,276,,
-32,Oflag 79,Querum bei Braunschweig,formerly Oflag F8 Braunschweig. South west of braunschweig.,GERMANY,276,,
+32,Oflag 79,Querum bei Braunschweig,"formerly Oflag F8 Braunschweig. South west of braunschweig.
+
+https://en.wikipedia.org/wiki/Oflag_79",GERMANY,276,52.3080,10.5581
 33,Ambon,Ambon,Ambon town located on Ambon island Indonesia,INDONESIA,360,,
 34,Changi,Singapore Island,,MALAYA,458,,
 35,Chunkai,Chunkai,5km west of Kanchanaburi,THAILAND,764,,
@@ -114,3 +116,4 @@ id,Name,NearestCity,Notes,WartimeCountry,PresentCountry_id,Latitude,Longitude
 113,Dulmen,Munster,,,276,,
 114,59 Servigliano Nr Piceno,Piceno,,Italy,276,,
 115,Tokyo,Tokyo,,,392,,
+116,Campo 52,Chiavara,,,380,,
